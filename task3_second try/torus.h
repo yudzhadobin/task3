@@ -1,6 +1,6 @@
 const int vcount = 528;
 const int icount = 3072;
-int size = 200;
+int size = 100;
 
 
 const float vertices[vcount][3][3] = {

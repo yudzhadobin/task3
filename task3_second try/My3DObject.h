@@ -35,6 +35,7 @@ public:
 
 	void Draw(List<Side^>^ sides, Bitmap^ bitmap, MyMatrix<double>^ proectMatrix);
 
+
 	MyMatrix<double>^ GetObjectMatrix();
 
 	List<int>^ GetMedianPoint();
@@ -42,8 +43,7 @@ public:
 	void MoveToGlobal(MyMatrix<double>^ rotateX, MyMatrix<double>^ rotateY, MyMatrix<double>^ rotateZ, int x, int y, int z);
 	void MoveToGlobal();
 	MyMatrix<double>^ ToMatrixGlobalPoints();
-
-private:
+	
 	double calculateIntensity(Side^ side);
 };
 

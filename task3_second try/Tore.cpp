@@ -10,7 +10,7 @@ Tore::Tore():My3DObject()
 void Tore::init()
 {
 	this->centerX = 500;
-	this->centerY = 250;
+	this->centerY = 300;
 
 	List<double>^ point;
 	List<double>^ normal;

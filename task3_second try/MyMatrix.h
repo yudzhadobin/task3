@@ -57,7 +57,22 @@ public:
 			matrix->Add(gcnew List<T>);
 			for (int j = 0; j < width; j++)
 			{
-				matrix[i]->Add(0);
+				matrix[i]->Add(T());
+			}
+		}
+	}
+
+	MyMatrix(int width, int length, T value) :MyMatrix()
+	{
+		Length = length;
+		Width = width;
+
+		for (int i = 0; i < length; i++)
+		{
+			matrix->Add(gcnew List<T>);
+			for (int j = 0; j < width; j++)
+			{
+				matrix[i]->Add(value);
 			}
 		}
 	}
@@ -67,6 +82,12 @@ public:
 		List<T>^ v = matrix[i];
 		v[j] = value;
 
+	}
+
+	T get(int i, int j)
+	{
+		List<T>^ v = matrix[i];
+		return v[j];
 	}
 
 	List<T>^ GetRaw(int index)
@@ -109,7 +130,16 @@ public:
 		return result;
 	}
 	
-
+	void clear(T value) {
+		for (int i = 0; i < Length; i++)
+		{
+			List<int>^ sub = matrix[i];
+			for (int j = 0; i < Width; i++)
+			{
+				sub[j] = value;
+			}
+		}
+	}
 };
 
 

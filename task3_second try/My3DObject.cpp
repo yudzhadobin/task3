@@ -1,5 +1,5 @@
 #include "My3DObject.h"
-#include "Side.h"
+
 
 
 My3DObject::My3DObject()
@@ -31,7 +31,7 @@ List<int>^ My3DObject::GetMedianPoint()
 	int y = 0;
 	int z = 0;
 
-	for (size_t i = 0; i < global_points->Count; i++)
+	for (int i = 0; i < global_points->Count; i++)
 	{
 		List<int>^ point = global_points[i];
 
@@ -59,6 +59,9 @@ void My3DObject::MoveToGlobal(MyMatrix<double>^ rotateX, MyMatrix<double>^ rotat
 	result->plus(1, y);
 	result->plus(2, z);
 
+	normalsMatrix->plus(0, x);
+	normalsMatrix->plus(1, y);
+	normalsMatrix->plus(2, z);
 	Projector^ projector = gcnew Projector;
 
 	if (rotateX != nullptr) {
@@ -76,7 +79,7 @@ void My3DObject::MoveToGlobal(MyMatrix<double>^ rotateX, MyMatrix<double>^ rotat
 
 	global_points->Clear();
 	global_normals->Clear();
-	for (size_t i = 0; i < result->Length; i++)
+	for (int i = 0; i < result->Length; i++)
 	{
 		List<double>^ sub = result->GetRaw(i);
 		List<double>^ sub2 = normalsMatrix->GetRaw(i);
