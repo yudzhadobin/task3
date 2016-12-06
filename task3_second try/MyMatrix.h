@@ -12,6 +12,21 @@ public:
 	property int Length;
 	property int Width;
 public:
+
+	static MyMatrix^ FromArray(List<List<T>^>^ list) {
+		MyMatrix<T>^ result = gcnew MyMatrix<T>();
+		result->Length = list->Count;
+		result->Width = list[0]->Count;
+		List<T>^ sub;
+		for (int i = 0; i < list->Count; i++)
+		{
+			sub = gcnew List<T>(list[i]);
+			sub->Add(1);
+			result->matrix->Add(sub);
+		}
+		return result;
+	}
+
 	MyMatrix()
 	{
 		matrix = gcnew List<List<T>^>();
@@ -62,7 +77,7 @@ public:
 	List<T>^ GetColumn(int index) {
 		List<T>^ result = gcnew List<T>();
 
-		for (int i = 0; i < Width; i++)
+		for (int i = 0; i < Length; i++)
 		{
 			List<T>^ sub = matrix[i];
 			result->Add(sub[index]);
@@ -93,5 +108,8 @@ public:
 		}
 		return result;
 	}
+	
+
 };
+
 

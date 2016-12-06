@@ -1,7 +1,5 @@
 #include "Cube.h"
 
-
-
 Cube::Cube(int size):My3DObject()
 {
 	init(size);
@@ -12,42 +10,42 @@ void Cube::init(int size)
 	this->centerX = 500;
 	this->centerY = 250;
 
-	List<int>^ a = gcnew List<int>();
+	List<double>^ a = gcnew List<double>();
 	a->Add(0);
 	a->Add(0);
 	a->Add(0);
 
-	List<int>^ b = gcnew List<int>();
+	List<double>^ b = gcnew List<double>();
 	b->Add(size);
 	b->Add(0);
 	b->Add(0);
 	
-	List<int>^ c = gcnew List<int>();
+	List<double>^ c = gcnew List<double>();
 	c->Add(size);
 	c->Add(0);
 	c->Add(size);
 
-	List<int>^ d = gcnew List<int>();
+	List<double>^ d = gcnew List<double>();
 	d->Add(0);
 	d->Add(0);
 	d->Add(size);
 
-	List<int>^ e = gcnew List<int>();
+	List<double>^ e = gcnew List<double>();
 	e->Add(0);
 	e->Add(size);
 	e->Add(0);
 
-	List<int>^ f = gcnew List<int>();
+	List<double>^ f = gcnew List<double>();
 	f->Add(size);
 	f->Add(size);
 	f->Add(0);
 
-	List<int>^ g = gcnew List<int>();
+	List<double>^ g = gcnew List<double>();
 	g->Add(size);
 	g->Add(size);
 	g->Add(size);
 
-	List<int>^ h = gcnew List<int>();
+	List<double>^ h = gcnew List<double>();
 	h->Add(0);
 	h->Add(size);
 	h->Add(size);

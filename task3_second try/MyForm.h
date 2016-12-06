@@ -1,12 +1,12 @@
 #pragma once
 #include "MyMatrix.h"
+#include "Tore.h"
 #include "RotateX.h"
 #include "RotateY.h"
 #include "Cube.h"
 #include "Projector.h"
 #include "ProectMatrix.h"
 #include "RotateZ.h"
-#include "RotateByLine.h"
 
 namespace task3_secondtry {
 
@@ -30,19 +30,16 @@ namespace task3_secondtry {
 
 			bm = gcnew Bitmap(pictureBox1->Width, pictureBox1->Height);
 			pictureBox1->Image = bm;
+			currentObject = gcnew Tore();
+			currentObject->MoveToGlobal();
+			currentObject->Draw(currentObject->sides, bm, gcnew ProectMatrix());
+/*			currentObject = gcnew currentObject(100);
+			currentObject->MoveToGlobal();
+			currentObject->GetObjectMatrix();
 
-			cube = gcnew Cube(100);
-
-			Projector^ projector = gcnew Projector();
-
-			MyMatrix<double>^ matrix = projector->Multiple(cube->ToMatrix(), gcnew ProectMatrix());
-
-			cube->Draw(matrix, cube->sides, bm);
-
+			currentObject->Draw(currentObject->sides, bm, gcnew ProectMatrix());
+*/
 			pictureBox1->Refresh();
-			//
-			//TODO: Add the constructor code here
-			//
 		}
 
 	protected:
@@ -63,7 +60,7 @@ namespace task3_secondtry {
 	private: System::Windows::Forms::Label^  label1;
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
-	private: Cube^ cube;
+	private: My3DObject^ currentObject;
 	private: Bitmap^ bm;
 	private: System::Windows::Forms::NumericUpDown^  xShift;
 	private: System::Windows::Forms::NumericUpDown^  yShift;
@@ -306,11 +303,6 @@ namespace task3_secondtry {
 		int shiftY = (int)yShift->Value;
 		int shiftZ = (int)zShift->Value;
 
-		MyMatrix<double>^ matrix = cube->ToMatrix(); //сдвиг
-
-		matrix->plus(0, shiftX);
-		matrix->plus(1, shiftY);
-		matrix->plus(2, shiftZ);
 		
 		RotateX^ rotateX = gcnew RotateX(angleX);
 
@@ -318,21 +310,10 @@ namespace task3_secondtry {
 
 		RotateZ^ rotateZ = gcnew RotateZ(angleZ);
 
-		Projector^ projector = gcnew Projector();
 
-
-
-		matrix = projector->Multiple(matrix, rotateX);
-
-		matrix = projector->Multiple(matrix, rotateY);
-
-		matrix = projector->Multiple(matrix, rotateZ);
-
-	
-
-		matrix = projector->Multiple(matrix, gcnew ProectMatrix());
-
-		cube->Draw(matrix, cube->sides, bm);
+		currentObject->MoveToGlobal(rotateX, rotateY, rotateZ, shiftX, shiftY, shiftZ);
+	//	currentObject->GetObjectMatrix();
+		currentObject->Draw(currentObject->sides, bm, gcnew ProectMatrix());
 
 		pictureBox1->Refresh();
 

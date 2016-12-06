@@ -131,11 +131,14 @@
     <ClInclude Include="MyMatrix.h" />
     <ClInclude Include="ProectMatrix.h" />
     <ClInclude Include="Projector.h" />
-    <ClInclude Include="RotateByLine.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="RotateX.h" />
     <ClInclude Include="RotateY.h" />
     <ClInclude Include="RotateZ.h" />
     <ClInclude Include="Side.h" />
+    <ClInclude Include="Tore.h" />
+    <ClInclude Include="torus.h" />
+    <ClInclude Include="ZBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -150,16 +153,20 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="ProectMatrix.cpp" />
     <ClCompile Include="Projector.cpp" />
-    <ClCompile Include="RotateByLine.cpp" />
     <ClCompile Include="RotateX.cpp" />
     <ClCompile Include="RotateY.cpp" />
     <ClCompile Include="RotateZ.cpp" />
     <ClCompile Include="Side.cpp" />
+    <ClCompile Include="Tore.cpp" />
+    <ClCompile Include="ZBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="task3_second try.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

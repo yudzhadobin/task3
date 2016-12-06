@@ -19,6 +19,12 @@
     <Filter Include="Source Files\Conversions">
       <UniqueIdentifier>{3285e58b-f356-4a92-9ddb-6df9bc079511}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Objects">
+      <UniqueIdentifier>{306b8500-d28f-475a-a36e-e8e7d7d75100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Objects">
+      <UniqueIdentifier>{08b76659-16a7-4bcc-8cdb-169d88f1fb20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyForm.h">
@@ -28,12 +34,6 @@
       <Filter>Header Files\Conversions</Filter>
     </ClInclude>
     <ClInclude Include="MyMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="My3DObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Side.h">
@@ -51,7 +51,22 @@
     <ClInclude Include="RotateZ.h">
       <Filter>Header Files\Conversions</Filter>
     </ClInclude>
-    <ClInclude Include="RotateByLine.h">
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="My3DObject.h">
+      <Filter>Header Files\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="torus.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tore.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ZBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -61,12 +76,6 @@
     </ClCompile>
     <ClCompile Include="RotateX.cpp">
       <Filter>Source Files\Conversions</Filter>
-    </ClCompile>
-    <ClCompile Include="My3DObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cube.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Side.cpp">
       <Filter>Source Files</Filter>
@@ -83,7 +92,16 @@
     <ClCompile Include="RotateZ.cpp">
       <Filter>Source Files\Conversions</Filter>
     </ClCompile>
-    <ClCompile Include="RotateByLine.cpp">
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="My3DObject.cpp">
+      <Filter>Source Files\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Tore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ZBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -91,5 +109,10 @@
     <EmbeddedResource Include="MyForm.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="task3_second try.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>
