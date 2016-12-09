@@ -8,6 +8,8 @@
 #include "ProectMatrix.h"
 #include "RotateZ.h"
 #include "ZBuffer.h"
+#include "Spring.h"
+#include "Garlic.h"
 
 namespace task3_secondtry {
 
@@ -31,12 +33,15 @@ namespace task3_secondtry {
 
 			bm = gcnew Bitmap(pictureBox1->Width, pictureBox1->Height);
 			pictureBox1->Image = bm;
-			currentObject = gcnew Tore();
+			currentObject = gcnew Spring(30);
+			//currentObject = gcnew Garlic();
+			
+			//currentObject = gcnew Tore();
 		//	currentObject = gcnew Cube(20);
-			currentObject->MoveToGlobal();
+		//	currentObject->MoveToGlobal();
 
 			zBuffer = gcnew ZBuffer(bm);
-			zBuffer->Draw(currentObject);
+	//		zBuffer->Draw(currentObject);
 		/*	zBuffer->setPicture(pictureBox1);
 			zBuffer->Draw(currentObject);*/
 //			currentObject->Draw(zBuffer, bm);
@@ -47,7 +52,7 @@ namespace task3_secondtry {
 
 			currentObject->Draw(currentObject->sides, bm, gcnew ProectMatrix());
 */
-			pictureBox1->Refresh();
+			redraw();
 		}
 
 	protected:

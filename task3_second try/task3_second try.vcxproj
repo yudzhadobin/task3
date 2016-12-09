@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Cube.h" />
+    <ClInclude Include="Garlic.h" />
     <ClInclude Include="My3DObject.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
@@ -136,6 +137,7 @@
     <ClInclude Include="RotateY.h" />
     <ClInclude Include="RotateZ.h" />
     <ClInclude Include="Side.h" />
+    <ClInclude Include="Spring.h" />
     <ClInclude Include="Tore.h" />
     <ClInclude Include="torus.h" />
     <ClInclude Include="ZBuffer.h" />
@@ -149,6 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Cube.cpp" />
+    <ClCompile Include="Garlic.cpp" />
     <ClCompile Include="My3DObject.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="ProectMatrix.cpp" />
@@ -157,6 +160,7 @@
     <ClCompile Include="RotateY.cpp" />
     <ClCompile Include="RotateZ.cpp" />
     <ClCompile Include="Side.cpp" />
+    <ClCompile Include="Spring.cpp" />
     <ClCompile Include="Tore.cpp" />
     <ClCompile Include="ZBuffer.cpp" />
   </ItemGroup>

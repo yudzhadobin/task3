@@ -20,11 +20,11 @@ public:
 	List<Side^>^ sides;
 
 private:
-	const double diffuseReflectionCoef = 0.5;
-	const int lightIntensity = 1;
-	int light_x = 100;
-	int light_y = 100;
-	int light_z = 100;
+	const static double diffuseReflectionCoef = .50;
+	const static double lightIntensity = 1;
+	int light_x = 700;
+	int light_y = 700;
+	int light_z = 700;
 
 
 
@@ -45,5 +45,6 @@ public:
 	MyMatrix<double>^ ToMatrixGlobalPoints();
 	
 	double calculateIntensity(Side^ side);
+
 };
 

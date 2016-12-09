@@ -6,6 +6,7 @@ ref class Side
 {
 public:
 	property List<int>^ Points;
+	property List<double>^ normal;
 
 	bool isVisible = true;
 public:

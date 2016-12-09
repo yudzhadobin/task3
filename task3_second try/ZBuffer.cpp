@@ -43,7 +43,10 @@ void ZBuffer::restereize(List<List<int>^>^ points, My3DObject^ obj, Side^ side) 
 	}
 
 	int totalHeight = c[1] - a[1];
-
+	double coef = obj->calculateIntensity(side);
+	int r_color = Color::Red.R * coef;
+	int g_color = Color::Red.G * coef;
+	int b_color = Color::Red.B * coef;
 	for (int i = 0; i < totalHeight; i++) {
 		bool secondHalf = (i > (b[1] - a[1])) || (b[1] == a[1]);
 		int segmentHeight = secondHalf ? c[1] - b[1] : b[1] - a[1];
@@ -85,13 +88,10 @@ void ZBuffer::restereize(List<List<int>^>^ points, My3DObject^ obj, Side^ side) 
 				if (zBuffer->get(point[0], point[1]) < point[2]) {
 					zBuffer->set(point[0], point[1], point[2]);
 
-					double coef = obj->calculateIntensity(side);
-					int R = Color::Red.R * coef;
-					int G = Color::Red.G * coef;
-					int B = Color::Red.B * coef;
-					scene->SetPixel(point[0], point[1], Color::FromArgb(255, R, G, B));
+					scene->SetPixel(point[0], point[1], Color::FromArgb(255, r_color, g_color, b_color));
 				}
 			}
+			
 		}
 	}
 }
